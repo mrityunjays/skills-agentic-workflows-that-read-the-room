@@ -34,6 +34,8 @@ Use these sources and instructions:
 
 Use the GitHub Blog, GitHub Changelog, and Awesome Copilot workflows as sources for updates, product changes, and practical examples relevant to Mona's audience.
 
+If the repository model configuration is not available or resolves to an unsupported Copilot model, prefer a known-supported model such as `gpt-4o` for this workflow instead of relying on an invalid repository default.
+
 Update `site/content/github-info.md` with concise, practical website copy that reflects the latest GitHub developments and Mona's notes.
 
 Open a pull request for Mona to review. Use `safe-outputs` with `create-pull-request` so the agent can propose changes without writing directly to `main`. The pull request should be ready for Mona to review and approve or adjust before merge.
