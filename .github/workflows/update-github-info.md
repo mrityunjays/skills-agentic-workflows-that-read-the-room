@@ -36,6 +36,6 @@ Use the GitHub Blog, GitHub Changelog, and Awesome Copilot workflows as sources 
 
 If the repository model configuration is not available or resolves to an unsupported Copilot model, prefer a known-supported model such as `gpt-4o` for this workflow instead of relying on an invalid repository default.
 
-Update `site/content/github-info.md` with concise, practical website copy that reflects the latest GitHub developments and Mona's notes.
+Update `site/content/github-info.md` with a visible, real content edit that reflects the latest GitHub developments and Mona's notes. Do not leave the file unchanged. Include source context in the file itself when the update comes from the GitHub Blog, GitHub Changelog, or Awesome Copilot workflows by adding a short line such as `Source: GitHub Blog` or `Source: GitHub Changelog` near the updated section, and include the source URL when helpful.
 
-Open a pull request for Mona to review. Use `safe-outputs` with `create-pull-request` so the agent can propose changes without writing directly to `main`. The pull request should be ready for Mona to review and approve or adjust before merge.
+Open a pull request for Mona to review. Use `safe-outputs` with `create-pull-request` so the agent can propose changes without writing directly to `main`. The pull request body or changed content must clearly mention `GitHub Blog`, `GitHub Changelog`, or `awesome-copilot.github.com` so the source of the update is visible. The pull request should be ready for Mona to review and approve or adjust before merge.
