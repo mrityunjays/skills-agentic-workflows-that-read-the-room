@@ -36,6 +36,16 @@ Use the GitHub Blog, GitHub Changelog, and Awesome Copilot workflows as sources 
 
 If the repository model configuration is not available or resolves to an unsupported Copilot model, prefer a known-supported model such as `gpt-4o` for this workflow instead of relying on an invalid repository default.
 
-Update `site/content/github-info.md` with a visible, real content edit that reflects the latest GitHub developments and Mona's notes. Do not leave the file unchanged. Include source context in the file itself when the update comes from the GitHub Blog, GitHub Changelog, or Awesome Copilot workflows by adding a short line such as `Source: GitHub Blog` or `Source: GitHub Changelog` near the updated section, and include the source URL when helpful.
+Required workflow behavior:
+1. Read `notes/mona-notes.md` and the selected source pages before editing.
+2. Web fetch the current GitHub Blog and GitHub Changelog pages and extract at least one concrete update or product announcement that is new enough to be relevant to readers.
+3. Edit `site/content/github-info.md` with an actual visible change that reflects the newly fetched source, such as adding a new bullet, a fresh subsection, or a concrete recommendation based on the source.
+4. Do not leave the file unchanged. The change must be specific, useful, and based on the fetched sources rather than a generic restatement.
+5. Add source attribution directly in the content near the change, using a line like `Source: GitHub Blog`, `Source: GitHub Changelog`, or `Source: Awesome Copilot workflows`, plus the source URL when helpful.
+6. Use `safe-outputs` with `create-pull-request` only after the page has been updated.
+7. The generated pull request must include the same source context in the PR body or title, and it must clearly mention `GitHub Blog`, `GitHub Changelog`, or `awesome-copilot.github.com`.
+8. If the source material does not obviously fit the existing content, create a short new section titled something like `Recent GitHub updates` and add 2-4 bullets with source labels.
 
-Open a pull request for Mona to review. Use `safe-outputs` with `create-pull-request` so the agent can propose changes without writing directly to `main`. The pull request body or changed content must clearly mention `GitHub Blog`, `GitHub Changelog`, or `awesome-copilot.github.com` so the source of the update is visible. The pull request should be ready for Mona to review and approve or adjust before merge.
+Update `site/content/github-info.md` with concise, practical website copy that reflects the latest GitHub developments and Mona's notes. Make sure the change is a real content improvement and not a no-op.
+
+Open a pull request for Mona to review. Use `safe-outputs` with `create-pull-request` so the agent can propose changes without writing directly to `main`. The pull request should clearly say where the new information came from and should be ready for Mona to review and approve or adjust before merge.
